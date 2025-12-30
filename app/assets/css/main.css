@@ -1,0 +1,219 @@
+:root {
+  --main-color: #0db37c;
+  --dark-main-color: #00583b;
+  --second-color: #1f1c1c;
+  --main-distance: 30px;
+  --main-border: 2px solid #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'FunnelDisplay', sans-serif;
+  font-weight: 500;
+  transition: 0.2s;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+ul {
+  margin-left: 20px;
+}
+
+hr {
+  background-color: #000;
+  height: 2px;
+  border: none;
+  margin: var(--main-distance);
+}
+
+/* ----- classes ----- */
+
+.small-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.medium-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.large-title {
+  font-size: 52px;
+  font-weight: 700;
+  text-align: center;
+  margin: var(--main-distance) var(--main-distance) 0 var(--main-distance);
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.center {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.item-with-icon {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.hover-color:hover {
+  color: var(--main-color);
+}
+
+.hover-opacity:hover {
+  opacity: 0.5;
+}
+
+/* ----- input, textarea and button ----- */
+
+input,
+textarea {
+  background-color: #fff;
+  width: 400px;
+  font-size: 16px;
+  border: var(--main-border);
+  outline: 2px solid transparent;
+  transition: 0.2s;
+}
+
+input {
+  padding: calc(var(--main-distance) / 2) 20px;
+}
+
+textarea {
+  padding: calc(var(--main-distance) / 2);
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline-color: #000;
+}
+
+button {
+  background-color: var(--main-color);
+  color: #fff;
+  font-size: 16px;
+  padding: calc(var(--main-distance) / 2) 25px;
+  border: 2px solid var(--main-color);
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: var(--dark-main-color);
+  border-color: var(--dark-main-color);
+}
+
+.black-button {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.black-button:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+/* ----- intro ----- */
+
+.intro {
+  background-color: #eee;
+  padding: calc(2 * var(--main-distance)) var(--main-distance);
+  border-radius: 0 0 30px 30px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.intro .first {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.intro a {
+  margin-top: 10px;
+  border-radius: 100px;
+}
+
+/* ----- adaptation ----- */
+
+@media screen and (min-width: 769px) {
+  ::-webkit-scrollbar {
+    background-color: #eee;
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #333;
+    cursor: pointer;
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #111;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+    border-image: none;
+  }
+
+  textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --main-distance: 20px;
+  }
+
+  .intro .first {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  input,
+  textarea {
+    width: 280px;
+  }
+
+  .large-title {
+    font-size: 36px;
+  }
+}

@@ -1,0 +1,22 @@
+services:
+  app:
+    build: .
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.4.7
+    environment:
+      MYSQL_DATABASE: yourfp
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/yourfp_db
+
+volumes:
+  db_data:
